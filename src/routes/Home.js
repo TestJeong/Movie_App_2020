@@ -23,20 +23,19 @@ class Home extends React.Component {
 
   componentDidMount() {
     this.getMovies();
+    console.log(this.props);
   } // render 된 즉후 실행됨.
 
   render() {
     const { isLoading, movies } = this.state;
     return (
       <section className="container">
-        {" "}
         {isLoading ? (
           <div className="loader">
-            <span className="loader__text"> Loading... </span>{" "}
+            <span className="loader__text"> Loading... </span>
           </div>
         ) : (
           <div className="movies">
-            {" "}
             {movies.map((movie) => (
               <Movie
                 key={movie.id}
@@ -47,7 +46,7 @@ class Home extends React.Component {
                 poster={movie.medium_cover_image}
                 genres={movie.genres}
               />
-            ))}{" "}
+            ))}
           </div>
         )}{" "}
       </section>
